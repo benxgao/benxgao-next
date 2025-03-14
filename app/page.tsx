@@ -2,7 +2,21 @@
 
 import { useEffect, useState, useRef } from 'react';
 import * as THREE from 'three';
-import { FaLinkedin, FaGithub, FaTwitter } from 'react-icons/fa'; // Import icons
+import { FaLinkedin, FaGithub, FaFacebook } from 'react-icons/fa';
+import { CiUser, CiMedal, CiBookmark } from 'react-icons/ci';
+import { sourceCodePro400, sourceCodePro700 } from '../styles/fonts';
+
+// Reusable Section Component
+const Section = ({ id, title, children }: { id: string; title: string; children: React.ReactNode }) => (
+  <section
+    id={id}
+    className={`${sourceCodePro400.className} relative z-10 bg-white p-8 py-48 rounded-lg shadow-md mx-8 sm:mx-16 lg:mx-32 min-h-[10rem]`}
+    style={{ margin: '2rem' }}
+  >
+    <h2 className='text-2xl sm:text-3xl lg:text-4xl font-semibold mb-6'>{title}</h2>
+    {children}
+  </section>
+);
 
 export default function Home() {
   const [isScrollingUp, setIsScrollingUp] = useState(true);
@@ -29,7 +43,7 @@ export default function Home() {
     renderer.setSize(window.innerWidth, window.innerHeight);
 
     const geometry = new THREE.PlaneGeometry(30, 30, 32, 32);
-    const material = new THREE.MeshBasicMaterial({ color: 0xd3d3d3, wireframe: true }); // Light grey color
+    const material = new THREE.MeshBasicMaterial({ color: 0xd3d3d3, wireframe: true });
     const plane = new THREE.Mesh(geometry, material);
     scene.add(plane);
 
@@ -37,8 +51,8 @@ export default function Home() {
 
     const animate = () => {
       requestAnimationFrame(animate);
-      plane.rotation.x += 0.002; // Slower rotation
-      plane.rotation.y += 0.002; // Slower rotation
+      plane.rotation.x += 0.002;
+      plane.rotation.y += 0.002;
       renderer.render(scene, camera);
     };
 
@@ -64,10 +78,12 @@ export default function Home() {
   return (
     <div>
       <canvas ref={canvasRef} className='fixed top-0 left-0 w-full h-full -z-10'></canvas>
-      <div className="relative min-h-screen bg-transparent text-black font-['Playfair_Display'] p-6 sm:p-12 lg:p-20 space-y-20">
+      <div className="relative min-h-screen bg-transparent text-black font-['Playfair_Display'] p-6 sm:p-12 lg:p-20 space-y-10">
         {/* Header */}
         <header
-          className={`fixed top-0 left-0 w-full bg-white p-4 flex items-center z-50 shadow-md transition-transform duration-300 ${
+          className={`${
+            sourceCodePro700.className
+          } fixed top-0 left-0 w-full bg-white p-4 flex items-center z-50 shadow-md transition-transform duration-300 ${
             isScrollingUp ? 'translate-y-0 ease-in' : '-translate-y-full ease-out'
           }`}
         >
@@ -75,121 +91,96 @@ export default function Home() {
           <div className='header-icons flex gap-4 ml-auto'>
             <button
               onClick={() => scrollToSection('personal-info')}
-              className='w-8 h-8 bg-gray-300 rounded-full block cursor-pointer'
-            ></button>{' '}
-            {/* Icon 1 */}
+              className='w-8 h-8 rounded-full flex items-center justify-center cursor-pointer'
+            >
+              <CiUser className='w-5 h-5' />
+            </button>
             <button
               onClick={() => scrollToSection('qualifications')}
-              className='w-8 h-8 bg-gray-300 rounded-full block cursor-pointer'
-            ></button>{' '}
-            {/* Icon 2 */}
+              className='w-8 h-8 rounded-full flex items-center justify-center cursor-pointer'
+            >
+              <CiMedal className='w-5 h-5' />
+            </button>
             <button
               onClick={() => scrollToSection('projects')}
-              className='w-8 h-8 bg-gray-300 rounded-full block cursor-pointer'
-            ></button>{' '}
-            {/* Icon 3 */}
+              className='w-8 h-8 rounded-full flex items-center justify-center cursor-pointer'
+            >
+              <CiBookmark className='w-5 h-5' />
+            </button>
           </div>
         </header>
 
         {/* Contact Info Section */}
-        <section
-          id='personal-info'
-          className='relative z-10 bg-white p-8 rounded-lg shadow-md mx-8 sm:mx-16 lg:mx-32 min-h-[10rem]'
-          style={{ margin: '2rem' }}
-        >
-          <h1 className='text-3xl sm:text-4xl lg:text-5xl font-bold mb-4'>Frontend Developer</h1>
-          <p className='text-base sm:text-lg'>Name: John Doe</p>
-          <p className='text-base sm:text-lg'>Email: john.doe@example.com</p>
+        <Section id='personal-info' title=''>
+          <p className='text-base sm:text-lg'>hi@benxgao.com</p>
+
           <p className='text-base sm:text-lg'>
-            LinkedIn:{' '}
             <a href='#' className='underline'>
-              linkedin.com/in/johndoe
+              medium.com/@benxgao
             </a>
           </p>
-          <p className='text-base sm:text-lg'>
-            Medium:{' '}
-            <a href='#' className='underline'>
-              medium.com/@johndoe
-            </a>
-          </p>
-        </section>
+        </Section>
+
+        {/* Skills Section */}
+        <Section id='skills' title=''>
+          <div className='flex flex-wrap gap-4'>
+            {[
+              'React',
+              'TypeScript',
+              'JavaScript',
+              'HTML',
+              'CSS',
+              'Tailwind CSS',
+              'Next.js',
+              'Node.js',
+              'Git',
+              'REST APIs',
+            ].map((skill, index) => (
+              <span key={index} className='px-4 py-2 bg-gray-200 text-sm sm:text-base rounded-full shadow-md'>
+                {skill}
+              </span>
+            ))}
+          </div>
+        </Section>
 
         {/* Qualifications Section */}
-        <section
-          id='qualifications'
-          className='relative z-10 bg-white p-8 rounded-lg shadow-md mx-8 sm:mx-16 lg:mx-32 min-h-[10rem]'
-          style={{ margin: '2rem' }}
-        >
-          <h2 className='text-2xl sm:text-3xl lg:text-4xl font-semibold mb-6'>Qualifications</h2>
+        <Section id='qualifications' title=''>
           <ul className='list-disc pl-4 sm:pl-6'>
-            <li className='text-base sm:text-lg'>Bachelor&apos;s Degree in Computer Science</li>
-            <li className='text-base sm:text-lg'>5+ years of experience in frontend development</li>
+            <li className='text-base sm:text-lg'>10+ years of experience in frontend development</li>
             <li className='text-base sm:text-lg'>Proficient in React, Tailwind CSS, and TypeScript</li>
           </ul>
-        </section>
+        </Section>
 
         {/* Personal Projects Section */}
-        <section
-          id='projects'
-          className='relative z-10 bg-white p-8 rounded-lg shadow-md mx-8 sm:mx-16 lg:mx-32 min-h-[10rem]'
-          style={{ margin: '2rem' }}
-        >
-          <h2 className='text-2xl sm:text-3xl lg:text-4xl font-semibold mb-6'>Personal Projects</h2>
-          <div className='grid gap-6 sm:gap-8 sm:grid-cols-2 lg:grid-cols-3'>
-            <div className='p-4 border border-black'>
-              <h3 className='text-lg sm:text-xl font-medium mb-2'>Project 1</h3>
-              <p className='text-sm sm:text-base'>
-                This project is a web application designed to streamline task management for teams. It features a clean
-                and intuitive interface, allowing users to create, assign, and track tasks efficiently. The app
-                integrates with popular tools like Slack and Google Calendar to enhance productivity. Built with React
-                and Tailwind CSS, it ensures a responsive and visually appealing user experience. The backend is powered
-                by Node.js and MongoDB, providing robust performance and scalability.
-              </p>
-            </div>
-            <div className='p-4 border border-black'>
-              <h3 className='text-lg sm:text-xl font-medium mb-2'>Project 2</h3>
-              <p className='text-sm sm:text-base'>
-                This project is an e-commerce platform tailored for small businesses. It includes features like product
-                listings, a shopping cart, and secure payment processing. The platform is optimized for mobile devices,
-                ensuring accessibility for all users. Developed using Next.js and Tailwind CSS, it delivers fast load
-                times and a seamless browsing experience. The backend leverages Firebase for real-time database
-                capabilities and authentication, making it a reliable solution for online stores.
-              </p>
-            </div>
-            <div className='p-4 border border-black'>
-              <h3 className='text-lg sm:text-xl font-medium mb-2'>Project 3</h3>
-              <p className='text-sm sm:text-base'>
-                This project is a portfolio website showcasing the work of a creative professional. It features a
-                minimalist design with smooth animations and interactive elements. The site is built with Gatsby and
-                Tailwind CSS, ensuring excellent performance and SEO optimization. It includes sections for projects,
-                testimonials, and a contact form. The website is fully responsive, providing an optimal viewing
-                experience on all devices. It serves as a perfect platform to highlight skills and attract potential
-                clients.
-              </p>
-            </div>
+        <Section id='projects' title=''>
+          <div className='flex flex-col gap-8'>
+            {['Project 1', 'Project 2', 'Project 3'].map((project, index) => (
+              <div key={index} className='p-4 w-full'>
+                <h3 className='text-lg sm:text-xl font-medium mb-2'>{project}</h3>
+                <p className='text-sm sm:text-base'>
+                  This is a description for {project}. It highlights the key features and technologies used.
+                </p>
+              </div>
+            ))}
           </div>
-        </section>
+        </Section>
 
         {/* Contact Form Section */}
-        <section
-          className='relative z-10 bg-white p-8 rounded-lg shadow-md mx-8 sm:mx-16 lg:mx-32 min-h-[10rem]'
-          style={{ margin: '2rem' }}
-        >
-          <h2 className='text-2xl sm:text-3xl lg:text-4xl font-semibold mb-6 text-center'>Contact Me</h2>
+        <Section id='contact' title='Contact Me'>
           <form className='grid gap-4 w-full max-w-4xl mx-auto p-4 sm:p-8 border border-gray-300 rounded-lg'>
             <input
               type='text'
               placeholder='Your Name'
-              className='p-3 border border-gray-400 rounded-md text-sm sm:text-base w-full'
+              className='p-3 border border-gray-400 rounded-md text-sm sm:text-base w-full focus:outline-none focus:ring-2 focus:ring-black'
             />
             <input
               type='email'
               placeholder='Your Email'
-              className='p-3 border border-gray-400 rounded-md text-sm sm:text-base w-full'
+              className='p-3 border border-gray-400 rounded-md text-sm sm:text-base w-full focus:outline-none focus:ring-2 focus:ring-black'
             />
             <textarea
               placeholder='Your Message'
-              className='p-3 border border-gray-400 rounded-md text-sm sm:text-base w-full'
+              className='p-3 border border-gray-400 rounded-md text-sm sm:text-base w-full focus:outline-none focus:ring-2 focus:ring-black'
               rows={6}
             ></textarea>
             <button
@@ -199,13 +190,29 @@ export default function Home() {
               Send Message
             </button>
           </form>
-        </section>
+        </Section>
       </div>
-      <footer className='h-30 w-screen bg-black flex items-center justify-between px-24'>
-        <p className='text-sm sm:text-base text-white'>© benxgao.com</p>
+
+      {/* Footer */}
+      <footer
+        className={`${sourceCodePro400.className} h-60 w-screen bg-black flex items-center justify-between px-24 py-24 relative`}
+      >
+        <div className='flex flex-col gap-2'>
+          {['x.com'].map((site, index) => (
+            <a
+              key={index}
+              href='https://x.com/benxgao'
+              target='_blank'
+              rel='noopener noreferrer'
+              className='text-white hover:text-gray-400 text-sm sm:text-base'
+            >
+              {site}
+            </a>
+          ))}
+        </div>
         <div className='flex gap-4'>
           <a
-            href='https://linkedin.com/in/johndoe'
+            href='https://linkedin.com/in/benxgao'
             target='_blank'
             rel='noopener noreferrer'
             className='text-white hover:text-gray-400'
@@ -213,7 +220,7 @@ export default function Home() {
             <FaLinkedin size={24} />
           </a>
           <a
-            href='https://github.com/johndoe'
+            href='https://github.com/benxgao'
             target='_blank'
             rel='noopener noreferrer'
             className='text-white hover:text-gray-400'
@@ -221,13 +228,17 @@ export default function Home() {
             <FaGithub size={24} />
           </a>
           <a
-            href='https://twitter.com/johndoe'
+            href='https://x.com/benxgao'
             target='_blank'
             rel='noopener noreferrer'
             className='text-white hover:text-gray-400'
           >
-            <FaTwitter size={24} />
+            <FaFacebook size={24} />
           </a>
+        </div>
+        <div className='absolute bottom-14 left-1/2 transform -translate-x-1/2 text-center'>
+          <p className='text-sm sm:text-base text-white'>© 2025 benxgao.com</p>
+          <p className='text-sm sm:text-base text-white'>Built with GitHub Copilot & Next.js</p>
         </div>
       </footer>
     </div>
