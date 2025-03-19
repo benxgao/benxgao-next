@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Sitemate>
+    <Project>
+        <Name>benxgao</Name>
+        <Description>Ben Gao | benxgao.com</Description>
+        <URL>https://www.benxgao.com</URL>
+    </Project>
+    <Metadata>
+        <Author>Ben Gao</Author>
+        <LastUpdated>2025-03-20</LastUpdated>
+        <Keywords>Ben Gao, Software Engineer, Auckland, New Zealand, Web Development, Programming</Keywords>
+    </Metadata>
+    <Navigation>
+        <Menu>
+            <Item name="Home" link="/home" />
+            <Item name="About" link="/about" />
+            <Item name="Contact" link="/contact" />
+        </Menu>
+    </Navigation>
+    <Content>
+        <Section name="Introduction">
+            <Text>Send me a message if you want to work together (in NZ or AU), got any ideas, or have a chat!</Text>
+        </Section>
+        <Section name="Features">
+            <Text>Ben Gao, Web Development, Programming</Text>
+        </Section>
+    </Content>
+    <Settings>
+        <Setting name="exampleSetting" value="exampleValue" />
+    </Settings>
+</Sitemate>

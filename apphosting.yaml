@@ -4,19 +4,15 @@ runConfig:
   minInstances: 0
   maxInstances: 10
   concurrency: 20
-  # cpu: 1
-  # memoryMiB: 512
-# Environment variables and secrets.
-# env:
-# Configure environment variables.
-# See https://firebase.google.com/docs/app-hosting/configure#user-defined-environment
-# - variable: MESSAGE
-#   value: Hello world!
-#   availability:
-#     - BUILD
-#     - RUNTIME
+  cpu: 1
+  memoryMiB: 512
 
-# Grant access to secrets in Cloud Secret Manager.
-# See https://firebase.google.com/docs/app-hosting/configure#secret-parameters
-# - variable: MY_SECRET
-#   secret: mySecretRef
+env:
+  - variable: NEXT_PUBLIC_EMAILJS_SERVICE_ID
+    value: service_benxgao_form
+
+  - variable: NEXT_PUBLIC_EMAILJS_TEMPLATE_ID
+    value: template_1vt8inm
+
+  - variable: NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
+    value: boekuT4PWhiqgwUXg

@@ -2,9 +2,13 @@
 
 import { useEffect, useState, useRef } from 'react';
 import * as THREE from 'three';
+// import { useData } from '@/src/mutations';
+
 import { FaLinkedin, FaGithub, FaFacebook } from 'react-icons/fa';
 import { CiUser, CiMedal, CiBookmark } from 'react-icons/ci';
 import { sourceCodePro400, sourceCodePro700 } from '../styles/fonts';
+import SimpleCloud from '@/src/components/SkillsTagCloud';
+import ContactForm from '@/src/components/ContactForm';
 
 // Reusable Section Component
 const Section = ({ id, title, children }: { id: string; title: string; children: React.ReactNode }) => (
@@ -12,7 +16,7 @@ const Section = ({ id, title, children }: { id: string; title: string; children:
     id={id}
     className={`${sourceCodePro400.className} relative z-10 bg-white p-4 sm:px-4 md:px-8 lg:px-16 sm:py-4 md:py-12 lg:py-24 rounded-lg shadow-md m-4 sm:m-4 md:m-8 lg:mx-16 min-h-[10rem]`}
   >
-    <h2 className='text-2xl sm:text-3xl lg:text-4xl font-semibold mb-6'>{title}</h2>
+    <h2 className='text sm:text-3xl lg:text-xl font-semibold mb-6'>{title}</h2>
     {children}
   </section>
 );
@@ -21,6 +25,7 @@ export default function Home() {
   const [isScrollingUp, setIsScrollingUp] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
+  // const { data, isLoading, isError } = useData('/api/sample-endpoint');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -90,21 +95,21 @@ export default function Home() {
           <div className='header-icons hidden sm:flex gap-4 ml-auto'>
             <button
               onClick={() => scrollToSection('personal-info')}
-              className='w-8 h-8 rounded-full flex items-center justify-center cursor-pointer'
+              className='w-8 h-8 rounded-full flex items-center justify-center cursor-pointer hover:bg-gray-200'
             >
-              <CiUser className='w-5 h-5' />
+              <CiUser className='w-5 h-5 hover:text-blue-500' />
             </button>
             <button
               onClick={() => scrollToSection('qualifications')}
-              className='w-8 h-8 rounded-full flex items-center justify-center cursor-pointer'
+              className='w-8 h-8 rounded-full flex items-center justify-center cursor-pointer hover:bg-gray-200'
             >
-              <CiMedal className='w-5 h-5' />
+              <CiMedal className='w-5 h-5 hover:text-green-500' />
             </button>
             <button
               onClick={() => scrollToSection('projects')}
-              className='w-8 h-8 rounded-full flex items-center justify-center cursor-pointer'
+              className='w-8 h-8 rounded-full flex items-center justify-center cursor-pointer hover:bg-gray-200'
             >
-              <CiBookmark className='w-5 h-5' />
+              <CiBookmark className='w-5 h-5 hover:text-purple-500' />
             </button>
           </div>
         </header>
@@ -114,7 +119,7 @@ export default function Home() {
           <p className='text-base sm:text-lg'>hi@benxgao.com</p>
 
           <p className='text-base sm:text-lg'>
-            <a href='#' className='underline'>
+            <a href='#' className='underline hover:text-cyan-300'>
               medium.com/@benxgao
             </a>
           </p>
@@ -122,28 +127,7 @@ export default function Home() {
 
         {/* Skills Section */}
         <Section id='skills' title=''>
-          <div className='flex flex-wrap gap-4'>
-            {[
-              'React.js',
-              'TypeScript',
-              'JavaScript',
-              'Tailwind CSS',
-              'Next.js',
-              'Node.js',
-              'GCP',
-              'AWS',
-              'Firebase',
-              'Message queue',
-              'Web authentication',
-              'Mobile-first design',
-              'MongoDB',
-              'Terraform',
-            ].map((skill, index) => (
-              <span key={index} className='px-4 py-2 bg-gray-200 text-sm sm:text-base rounded-full shadow-md'>
-                {skill}
-              </span>
-            ))}
-          </div>
+          <SimpleCloud />
         </Section>
 
         {/* Qualifications Section */}
@@ -186,21 +170,37 @@ export default function Home() {
         <Section id='projects' title=''>
           <div className='flex flex-col gap-8'>
             <div key={1} className='p-4 w-full'>
-              <h3 className='text-lg sm:text-xl font-medium mb-2'>react-retheming-theme</h3>
+              <a href='https://github.com/benxgao/react-retheming-theme' target='_blank' rel='noopener noreferrer'>
+                <h3 className='text-lg sm:text-xl font-medium mb-2 hover:underline hover:text-blue-300'>
+                  react-retheming-theme
+                </h3>
+              </a>
               <p className='text-sm sm:text-base'>
                 A utility of CSS framework integration in styled-components -
                 https://github.com/benxgao/react-retheming-theme
               </p>
             </div>
             <div key={2} className='p-4 w-full'>
-              <h3 className='text-lg sm:text-xl font-medium mb-2'>strapi-terraform-gcp-sample</h3>
+              <a
+                href='https://github.com/benxgao/strapi-terraform-gcp-sample'
+                target='_blank'
+                rel='noopener noreferrer'
+              >
+                <h3 className='text-lg sm:text-xl font-medium mb-2 hover:underline hover:text-green-300'>
+                  strapi-terraform-gcp-sample
+                </h3>
+              </a>
               <p className='text-sm sm:text-base'>
                 A template for deploying Strapi CMS on GCP with Terraform and CircleCI -
                 https://github.com/benxgao/strapi-terraform-gcp-sample
               </p>
             </div>
             <div key={3} className='p-4 w-full'>
-              <h3 className='text-lg sm:text-xl font-medium mb-2'>benxgao-next</h3>
+              <a href='https://github.com/benxgao/benxgao-next' target='_blank' rel='noopener noreferrer'>
+                <h3 className='text-lg sm:text-xl font-medium mb-2 hover:underline hover:text-purple-300'>
+                  benxgao-next
+                </h3>
+              </a>
               <p className='text-sm sm:text-base'>
                 My profile website built with Github Copilot and Next.js - https://github.com/benxgao/benxgao-next
               </p>
@@ -208,31 +208,19 @@ export default function Home() {
           </div>
         </Section>
 
+        {/* Sample Data Section */}
+        {/* <Section id='sample-data' title='Sample Data'>
+          {isLoading && <p>Loading...</p>}
+          {isError && <p>Error loading data.</p>}
+          {data && <pre>{JSON.stringify(data, null, 2)}</pre>}
+        </Section> */}
+
         {/* Contact Form Section */}
-        <Section id='contact' title='Contact Me'>
-          <form className='grid gap-4 w-full max-w-4xl mx-auto p-4 sm:p-8 border border-gray-300 rounded-lg'>
-            <input
-              type='text'
-              placeholder='Your Name'
-              className='p-3 border border-gray-400 rounded-md text-sm sm:text-base w-full focus:outline-none focus:ring-2 focus:ring-black'
-            />
-            <input
-              type='email'
-              placeholder='Your Email'
-              className='p-3 border border-gray-400 rounded-md text-sm sm:text-base w-full focus:outline-none focus:ring-2 focus:ring-black'
-            />
-            <textarea
-              placeholder='Your Message'
-              className='p-3 border border-gray-400 rounded-md text-sm sm:text-base w-full focus:outline-none focus:ring-2 focus:ring-black'
-              rows={6}
-            ></textarea>
-            <button
-              type='submit'
-              className='p-3 bg-black text-white rounded-md hover:bg-gray-800 text-sm sm:text-base w-full'
-            >
-              Send Message
-            </button>
-          </form>
+        <Section
+          id='contact'
+          title='Send me a message if you want to work together (in NZ or AU), got any ideas, or have a chat!'
+        >
+          <ContactForm />
         </Section>
       </div>
 
@@ -248,7 +236,7 @@ export default function Home() {
                 href='https://x.com/benxgao'
                 target='_blank'
                 rel='noopener noreferrer'
-                className='text-white hover:text-gray-400 text-sm sm:text-base'
+                className='text-white hover:text-gray-300 text-sm sm:text-base'
               >
                 {site}
               </a>
@@ -259,7 +247,7 @@ export default function Home() {
               href='https://linkedin.com/in/benxgao'
               target='_blank'
               rel='noopener noreferrer'
-              className='text-white hover:text-sky-400'
+              className='text-white hover:text-sky-300'
             >
               <FaLinkedin size={24} />
             </a>
@@ -267,7 +255,7 @@ export default function Home() {
               href='https://github.com/benxgao'
               target='_blank'
               rel='noopener noreferrer'
-              className='text-white hover:text-fuchsia-400'
+              className='text-white hover:text-fuchsia-300'
             >
               <FaGithub size={24} />
             </a>
