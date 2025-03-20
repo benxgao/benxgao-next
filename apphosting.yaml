@@ -1,5 +1,3 @@
-# Settings for Backend (on Cloud Run).
-# See https://firebase.google.com/docs/app-hosting/configure#cloud-run
 runConfig:
   minInstances: 0
   maxInstances: 10
@@ -8,6 +6,9 @@ runConfig:
   memoryMiB: 512
 
 env:
+  - variable: NEXT_PUBLIC_SITE_URL
+    value: https://benxgao.com
+
   - variable: NEXT_PUBLIC_EMAILJS_SERVICE_ID
     value: service_benxgao_form
 

@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://benxgao.com
+
+# Sitemaps
+Sitemap: https://benxgao.com/sitemap.xml
