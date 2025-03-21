@@ -1,18 +1,26 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { format } from 'date-fns';
+// import { sourceCodePro500 } from '@/styles/fonts';
+import Image from 'next/image';
 import PageHeader from '@/src/components/PageHeader';
 import PageFooter from '@/src/components/PageFooter';
-
+import { HiOutlineMail } from 'react-icons/hi';
+import { IoMdTimer } from 'react-icons/io';
+import { PiCityLight } from 'react-icons/pi';
 import SimpleCloud from '@/src/components/SkillsTagCloud';
 import ContactForm from '@/src/components/ContactForm';
 import BgGraphics from '@/src/components/BgGraphics';
 import PageSection from '@/src/components/PageSection';
+// import Slider from 'react-slick';
+// import 'slick-carousel/slick/slick.css';
+// import 'slick-carousel/slick/slick-theme.css';
 
 export default function Home() {
   const [isScrollingUp, setIsScrollingUp] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
-  // const { data, isLoading, isError } = useData('/api/sample-endpoint');
+  const [localTime, setLocalTime] = useState(format(new Date(), 'yyyy-MM-dd hh:mm a')); // Update format to 24-hour with AM/PM
 
   useEffect(() => {
     const handleScroll = () => {
@@ -21,8 +29,17 @@ export default function Home() {
       setLastScrollY(currentScrollY);
     };
 
+    const updateTime = () => {
+      setLocalTime(format(new Date(), 'yyyy-MM-dd HH:mm a')); // Update format to 24-hour with AM/PM
+    };
+
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    const timeInterval = setInterval(updateTime, 60000); // Set interval for updating time
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      clearInterval(timeInterval); // Clear interval on unmount
+    };
   }, [lastScrollY]);
 
   return (
@@ -32,9 +49,31 @@ export default function Home() {
         {/* Header */}
         <PageHeader isScrollingUp={isScrollingUp} />
 
-        {/* Contact Info Section */}
-        <PageSection id='personal-info' title=''>
-          <p className='text-base sm:text-lg'>hi@benxgao.com</p>
+        {/* Info Section */}
+        <PageSection id='personal-info' title='' className='flex flex-col sm:flex-row'>
+          <div id='info-brief' className='sm:float-left sm:w-1/2 bg-opacity-50'>
+            <h4 id='info-email' className={`text-base sm:text-lg flex items-center`}>
+              <HiOutlineMail className='mr-2 text-lg text-gray-500' />
+              hi@benxgao.com
+            </h4>
+            <p id='info-time' className='text-base sm:text-lg flex items-center'>
+              <IoMdTimer className='mr-2 text-lg text-gray-500' />
+              {localTime}
+            </p>
+            <p id='info-location' className='text-base sm:text-lg flex items-center'>
+              <PiCityLight className='mr-2 text-lg text-gray-500' /> Auckland, New Zealand
+            </p>
+            <Image
+              src='/stay_stay.png'
+              alt='stay foolish, stay humble.'
+              width={300}
+              height={50}
+              className='w-65 h-auto object-cover mt-24'
+            />
+          </div>
+          <div id='info-avatar' className='sm:float-right sm:w-1/2 items-center justify-center'>
+            <Image src='/avatar.jpg' alt='Avatar' width={600} height={450} className='w-full h-90 object-cover' />
+          </div>
         </PageSection>
 
         {/* Skills Section */}
@@ -119,6 +158,52 @@ export default function Home() {
             </div>
           </div>
         </PageSection>
+
+        {/* Books Recently Read Section */}
+        {/* <PageSection id='books' title='Books Recently Read'>
+          <Slider
+            dots={true}
+            infinite={true}
+            speed={500}
+            slidesToShow={3}
+            slidesToScroll={1}
+            responsive={[
+              { breakpoint: 1024, settings: { slidesToShow: 2 } },
+              { breakpoint: 600, settings: { slidesToShow: 1 } },
+            ]}
+          >
+            <div className='p-4'>
+              <Image
+                src='/avatar.jpg'
+                alt='Atomic Habits'
+                width={200}
+                height={300}
+                className='w-full h-auto object-cover'
+              />
+              <p className='text-center mt-2 text-base sm:text-lg'>Atomic Habits by James Clear</p>
+            </div>
+            <div className='p-4'>
+              <Image
+                src='/avatar.jpg'
+                alt='Deep Work'
+                width={200}
+                height={300}
+                className='w-full h-auto object-cover'
+              />
+              <p className='text-center mt-2 text-base sm:text-lg'>Deep Work by Cal Newport</p>
+            </div>
+            <div className='p-4'>
+              <Image
+                src='/avatar.jpg'
+                alt='The Pragmatic Programmer'
+                width={200}
+                height={300}
+                className='w-full h-auto object-cover'
+              />
+              <p className='text-center mt-2 text-base sm:text-lg'>The Pragmatic Programmer by Andrew Hunt</p>
+            </div>
+          </Slider>
+        </PageSection> */}
 
         {/* Sample Data Section */}
         {/* <Section id='sample-data' title='Sample Data'>
