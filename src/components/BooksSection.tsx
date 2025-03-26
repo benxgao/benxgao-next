@@ -204,7 +204,7 @@ export default function BooksSection() {
                         alt={`${book.title}${book.subtitle ? ` - ${book.subtitle}` : ''}`}
                         fill
                         sizes='(max-width: 400px) 50vw, (max-width: 1024px) 10vw, 21vw'
-                        className='object-cover rounded-md shadow-lg'
+                        className='object-cover rounded-md shadow-[6px_6px_12px_rgba(0,0,0,0.15),8px_8px_24px_rgba(0,0,0,0.2)] hover:shadow-[10px_10px_20px_rgba(0,0,0,0.2),12px_12px_30px_rgba(0,0,0,0.25)] transition-shadow duration-300 ease-in-out'
                         priority={index < 3}
                       />
                     </div>
