@@ -1,4 +1,5 @@
-import { FaGithub, FaTwitter, FaMedium } from 'react-icons/fa';
+import { FaGithub, FaMedium } from 'react-icons/fa';
+import { FaXTwitter } from 'react-icons/fa6';
 import { sourceCodePro700 } from '../../styles/fonts';
 
 export default function PageHeader({ isScrollingUp }: { isScrollingUp: boolean }) {
@@ -24,7 +25,7 @@ export default function PageHeader({ isScrollingUp }: { isScrollingUp: boolean }
           title='Twitter'
           className='w-8 h-8 rounded-full flex items-center justify-center cursor-pointer hover:bg-gray-200'
         >
-          <FaTwitter className='w-5 h-5 hover:text-amber-300' />
+          <FaXTwitter className='w-5 h-5 hover:text-amber-300' />
         </button>
         <button
           onClick={() => window.open('https://medium.com/@benxgao', '_blank')}

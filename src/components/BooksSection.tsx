@@ -167,7 +167,7 @@ export default function BooksSection() {
   }, [books]);
 
   return (
-    <PageSection id='books' title='Recently completed reading in Chinese translation'>
+    <PageSection id='books' title='My recently completed reading includes Chinese versions'>
       <div className='pb-8'>
         {isClient ? (
           <Slider

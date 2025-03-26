@@ -1,4 +1,5 @@
-import { FaGithub, FaTwitter, FaMedium } from 'react-icons/fa';
+import { FaGithub, FaMedium } from 'react-icons/fa';
+import { FaXTwitter } from 'react-icons/fa6';
 import { sourceCodePro400 } from '../../styles/fonts';
 
 export default function PageFooter() {
@@ -28,7 +29,7 @@ export default function PageFooter() {
             rel='noopener noreferrer'
             className='text-white hover:text-amber-300'
           >
-            <FaTwitter size={24} />
+            <FaXTwitter size={24} />
           </a>
         </div>
       </div>
