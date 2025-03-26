@@ -25,3 +25,13 @@ body {
   margin: 0; /* Ensure no extra margin around the body */
   scroll-behavior: smooth; /* Enable smooth scrolling */
 }
+
+/* Customizing the Slick Carousel */
+.slick-prev:before,
+.slick-next::before {
+  color: #bbbbbb !important;
+  font-size: 30px !important;
+  position: absolute !important;
+  top: -3px !important;
+  left: -5px !important;
+}
