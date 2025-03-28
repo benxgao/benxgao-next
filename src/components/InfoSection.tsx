@@ -55,7 +55,15 @@ const InfoSection = ({}) => {
   }, []);
 
   return (
-    <PageSection id='personal-info' title='' className='flex flex-col sm:flex-row'>
+    <PageSection id='personal-info' title='' className='relative flex flex-col sm:flex-row'>
+      <Image
+        src='/postmark-bg.png'
+        alt='Postmark Background'
+        width={160}
+        height={160}
+        className='absolute bottom-10 right-5 w-60 h-60 bg-no-repeat bg-contain z-50 hidden sm:block'
+        style={{ transform: 'rotate(30deg)' }}
+      />
       <div id='info-brief' className='sm:float-left sm:w-1/2 bg-opacity-50'>
         <p className='font-medium text-base sm:text-lg line-clamp-2'>Hi there, how is it going? </p>
         <p className='font-medium text-base sm:text-lg line-clamp-2'>I am in Auckland, New Zealand.</p>

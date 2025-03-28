@@ -7,7 +7,7 @@ export default function PageHeader({ isScrollingUp }: { isScrollingUp: boolean }
     <header
       className={`${
         sourceCodePro700.className
-      } fixed top-0 left-0 w-full bg-white px-8 py-6 sm:py-6 md:py-4 flex items-center z-50 shadow-md transition-transform duration-300 ${
+      } fixed top-0 left-0 w-full shadow-sm bg-white px-8 py-6 sm:py-6 md:py-4 flex items-center z-50 transition-transform duration-300 ${
         isScrollingUp ? 'translate-y-0 ease-in' : '-translate-y-full ease-out'
       }`}
     >
