@@ -154,6 +154,37 @@ const bookList = [
     coverImage:
       'https://books.google.com/books/content?id=ugbpswEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api',
   },
+  {
+    title: 'The hand thing about hard things',
+    subtitle: 'Building a Business When There Are No Easy Answers',
+    authors: ['Ben Horowitz'],
+    previewLink: '',
+    coverImage:
+      'https://books.google.com/books/content?id=620pAgAAQBAJ&printsec=frontcover&img=1&zoom=0&edge=curl&source=gbs_api',
+  },
+  {
+    title: 'How Google Works',
+    subtitle: "The Ultimate Guide to the World's Most Innovative Company",
+    authors: ['Eric Schmidt', 'Jonathan Rosenberg'],
+    previewLink: '',
+    coverImage:
+      'https://books.google.com/books/content?id=fEJ0AwAAQBAJ&printsec=frontcover&img=1&zoom=0&source=gbs_api',
+  },
+  {
+    title: 'Principles',
+    subtitle: 'Life and Work',
+    authors: ['Ray Dalio'],
+    previewLink: '',
+    coverImage:
+      'https://books.google.com/books/content?id=qNNmDwAAQBAJ&printsec=frontcover&img=1&zoom=0&edge=curl&source=gbs_api',
+  },
+  {
+    title: 'Hackers & Painters',
+    subtitle: 'Big Ideas from the Computer Age',
+    authors: ['Paul Graham'],
+    previewLink: '',
+    coverImage: 'https://upload.wikimedia.org/wikipedia/en/8/80/Hackers_%26_Painters.jpg',
+  },
 ];
 
 export default function BooksSection() {
@@ -166,8 +197,40 @@ export default function BooksSection() {
     }
   }, [books]);
 
+  // useEffect(() => {
+  //   const apiKey = 'AIzaSyCedKd1qAf9vnYbajt4ELw-9knWNY8rKnE';
+
+  //   const bookTitles = [];
+
+  //   [bookTitles[0]].forEach(async (title) => {
+  //     const searchQuery = title;
+  //     const apiUrl = `https://www.googleapis.com/books/v1/volumes?q=${searchQuery}&key=${apiKey}&maxResults=1`;
+
+  //     await fetch(apiUrl)
+  //       .then((x) => x.json())
+  //       .then((data) => {
+  //         const { volumeInfo } = data.items[0];
+
+  //         // console.log(`data.items[0]: ${JSON.stringify(data.items[0], null, 2)}`);
+
+  //         const metaData = {
+  //           title: volumeInfo.title,
+  //           subtitle: volumeInfo.subtitle,
+  //           authors: volumeInfo.authors,
+  //           previewLink: volumeInfo.previewLink,
+  //           coverImage: volumeInfo.imageLinks.thumbnail,
+  //         };
+
+  //         console.log(JSON.stringify(metaData, null, 2));
+
+  //         return metaData;
+  //       })
+  //       .catch((error) => console.error('Error fetching data:', error));
+  //   });
+  // }, []);
+
   return (
-    <PageSection id='books' title='My recently completed reading includes Chinese versions'>
+    <PageSection id='books' title='My completed reading includes Chinese versions'>
       <div className='pb-8'>
         {isClient ? (
           <Slider

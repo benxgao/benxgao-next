@@ -35,7 +35,7 @@ export default function Home() {
     <>
       <BgGraphics />
 
-      <div className="relative min-h-screen bg-transparent text-black font-['Playfair_Display'] p-0 sm:p-0 lg:px-20 space-y-0">
+      <div className="relative min-h-screen bg-transparent text-black font-['Playfair_Display'] p-0 sm:p-0 md:px-8 lg:px-12 space-y-0">
         <PageHeader isScrollingUp={isScrollingUp} />
 
         <InfoSection />

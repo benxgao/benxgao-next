@@ -4,63 +4,71 @@ import { sourceCodePro400 } from '../../styles/fonts';
 
 export default function PageFooter() {
   return (
-    <footer className={`${sourceCodePro400.className} w-screen bg-black py-12 px-8 sm:px-4 md:px-8 lg:px-24 relative`}>
-      <div className='flex mb-12'>
-        <div id='footer-tools' className=''>
+    <footer className={`${sourceCodePro400.className} w-screen bg-black py-12 px-8 sm:px-8 md:px-16 lg:px-30 relative`}>
+      <div className='flex flex-col sm:flex-row justify-between items-start mb-8'>
+        <div id='footer-tools' className='flex-2 md:flex-1 mb-8 sm:mb-8 lg:mb-0'>
           <p className='text text-white'>Built with:</p>
           <ul>
             <li>
               <a
                 className='text-sm text-white hover:text-pink-300 underline'
-                href='https://github.com/features/copilot?benxgao'
+                href='https://firebase.google.com/docs/app-hosting/?benxgao'
               >
-                GitHub Copilot
+                Firebase App hosting
               </a>
             </li>
             <li>
               <a
                 className='text-sm text-white hover:text-pink-300 underline'
-                href='https://www.typescriptlang.org?benxgao'
+                href='https://github.com/features/copilot/?benxgao'
               >
-                TypeScript
+                GitHub Copilot
               </a>
             </li>
             <li>
-              <a className='text-sm text-white hover:text-pink-300 underline' href='https://tailwindcss.com?benxgao'>
-                Tailwind CSS
-              </a>
-            </li>
-            <li>
-              <a className='text-sm text-white hover:text-pink-300 underline' href='https://nextjs.org?benxgao'>
+              <a className='text-sm text-white hover:text-pink-300 underline' href='https://nextjs.org/?benxgao'>
                 Next.js
               </a>
             </li>
             <li>
               <a
                 className='text-sm text-white hover:text-pink-300 underline'
-                href='https://firebase.google.com/docs/app-hosting?benxgao'
+                href='https://www.typescriptlang.org/?benxgao'
               >
-                Firebase App hosting
-              </a>
-            </li>
-          </ul>
-          <br />
-          <p className='text text-white'>Thanks to the amazing resources:</p>
-          <ul>
-            <li>
-              <a className='text text-white hover:text-pink-300 underline' href='https://www.canva.com/?benxgao'>
-                canva.com
+                TypeScript
               </a>
             </li>
             <li>
-              <a className='text text-white hover:text-pink-300 underline' href='https://www.remove.bg/?benxgao'>
-                remove.bg
+              <a className='text-sm text-white hover:text-pink-300 underline' href='https://tailwindcss.com/?benxgao'>
+                Tailwind CSS
               </a>
             </li>
           </ul>
         </div>
-
-        <div id='footer-social' className='hidden sm:flex gap-4 md:flex lg:flex ml-auto'>
+        <div id='footer-resources' className='flex-1 mb-8 sm:mb-8 lg:mb-0'>
+          <p className='text text-white'>Thanks to:</p>
+          <ul>
+            <li>
+              <a className='text-sm text-white hover:text-pink-300 underline' href='https://www.canva.com/?benxgao'>
+                canva.com
+              </a>
+            </li>
+            <li>
+              <a className='text-sm text-white hover:text-pink-300 underline' href='https://www.remove.bg/?benxgao'>
+                remove.bg
+              </a>
+            </li>
+            <li>
+              <a
+                className='text text-white hover:text-pink-300 underline'
+                href='https://www.http://wikipedia.org/?benxgao'
+              >
+                wikipedia.org
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div id='footer-social' className='flex-1 flex justify-start sm:justify-end gap-4'>
           <a
             href='https://medium.com/@benxgao'
             target='_blank'

@@ -50,7 +50,7 @@ const ContactForm = () => {
   return (
     <form
       onSubmit={handleSubmit}
-      className='grid gap-4 w-full max-w-4xl mx-auto p-4 sm:p-8 border border-gray-300 rounded-lg'
+      className='grid gap-4 w-full p-4 sm:p-8 border border-gray-300 rounded-sm'
     >
       <div>
         {/* <label htmlFor='from_name'>Name:</label> */}
@@ -59,7 +59,7 @@ const ContactForm = () => {
           id='from_name'
           name='from_name'
           placeholder='Your Name'
-          className='p-3 border border-gray-400 rounded-md text-sm sm:text-base w-full focus:outline-none focus:ring-2 focus:ring-black'
+          className='p-3 border border-gray-200 rounded-sm text-sm sm:text-base w-full focus:outline-none focus:border-gray-400'
           value={formData.from_name}
           onChange={handleChange}
           required
@@ -72,7 +72,7 @@ const ContactForm = () => {
           id='reply_to'
           name='reply_to'
           placeholder='Your Email'
-          className='p-3 border border-gray-400 rounded-md text-sm sm:text-base w-full focus:outline-none focus:ring-2 focus:ring-black'
+          className='p-3 border border-gray-200 rounded-sm text-sm sm:text-base w-full focus:outline-none focus:border-gray-400'
           value={formData.reply_to}
           onChange={handleChange}
           required
@@ -85,7 +85,7 @@ const ContactForm = () => {
           name='message'
           value={formData.message}
           placeholder='Your Message'
-          className='p-3 border border-gray-400 rounded-md text-sm sm:text-base w-full focus:outline-none focus:ring-2 focus:ring-black'
+          className='p-3 border border-gray-200 rounded-sm text-sm sm:text-base w-full focus:outline-none focus:border-gray-400'
           rows={6}
           onChange={handleChange}
           required
@@ -94,7 +94,7 @@ const ContactForm = () => {
       <button
         type='submit'
         disabled={isSending}
-        className='p-3 bg-black text-white rounded-md hover:bg-gray-800 text-sm sm:text-base w-full'
+        className='p-3 bg-black text-white rounded-sm hover:bg-blue-400 text-sm sm:text-base w-full cursor-pointer focus:outline-none focus:ring-blue-400'
       >
         {isSending ? 'Sending...' : 'Send message'}
       </button>

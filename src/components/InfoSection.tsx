@@ -65,10 +65,10 @@ const InfoSection = ({}) => {
         style={{ transform: 'rotate(30deg)' }}
       />
       <div id='info-brief' className='sm:float-left sm:w-1/2 bg-opacity-50'>
-        <p className='font-medium text-base sm:text-lg line-clamp-2'>Hi there, how is it going? </p>
+        <p className='font-medium text-base sm:text-lg line-clamp-2'>Hello, how is it going?</p>
         <p className='font-medium text-base sm:text-lg line-clamp-2'>I am in Auckland, New Zealand.</p>
         <p className='font-medium text-base sm:text-lg line-clamp-2'>
-          Now it is {localTime}, I might be {activity}.
+          Right now, it is {localTime}, I might be {activity}.
         </p>
         <p className='font-medium text-base sm:text-lg line-clamp-2'>What a life!</p>
 
