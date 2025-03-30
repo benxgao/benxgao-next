@@ -1,8 +1,28 @@
+'use client';
+
+import { useEffect, useState } from 'react';
 import { FaGithub, FaMedium } from 'react-icons/fa';
 import { FaXTwitter } from 'react-icons/fa6';
 import { sourceCodePro700 } from '../../styles/fonts';
 
-export default function PageHeader({ isScrollingUp }: { isScrollingUp: boolean }) {
+export default function PageHeader() {
+  const [isScrollingUp, setIsScrollingUp] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      setIsScrollingUp(currentScrollY < lastScrollY || currentScrollY < 10);
+      setLastScrollY(currentScrollY);
+    };
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [lastScrollY]);
+
+
   return (
     <header
       className={`${

@@ -1,3 +1,5 @@
+'use client';
+
 import PageSection from '@/src/components/PageSection';
 
 export default function WorkshopSection() {

@@ -1,7 +1,3 @@
-'use client';
-
-import { useEffect, useState } from 'react';
-
 import PageHeader from '@/src/components/PageHeader';
 import PageFooter from '@/src/components/PageFooter';
 import SimpleCloud from '@/src/components/SkillsTagCloud';
@@ -15,26 +11,11 @@ import InfoSection from '@/src/components/InfoSection';
 import WorkshopSection from '@/src/components/WorkshopSection';
 
 export default function Home() {
-  const [isScrollingUp, setIsScrollingUp] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-      setIsScrollingUp(currentScrollY < lastScrollY || currentScrollY < 10);
-      setLastScrollY(currentScrollY);
-    };
-    window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, [lastScrollY]);
 
   return (
     <>
       <div className="relative min-h-screen bg-transparent text-black font-['Playfair_Display'] p-0 sm:p-0 md:px-8 lg:px-12 space-y-0">
-        <PageHeader isScrollingUp={isScrollingUp} />
+        <PageHeader />
 
         <InfoSection />
 

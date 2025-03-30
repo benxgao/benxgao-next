@@ -61,34 +61,22 @@ const InfoSection = ({}) => {
         alt='Postmark Background'
         width={160}
         height={160}
-        className='absolute bottom-10 right-5 w-60 h-60 bg-no-repeat bg-contain z-50 hidden sm:block'
+        className='absolute bottom-10 right-5 w-60 sm:w-40 md:w-40 lg:w-60 h-60 sm:h-40 md:h-40 lg:h-60 bg-no-repeat bg-contain z-50 hidden sm:block'
         style={{ transform: 'rotate(30deg)' }}
       />
       <div id='info-brief' className='sm:float-left sm:w-1/2 bg-opacity-50'>
-        <p className='font-medium text-base sm:text-lg line-clamp-2'>Hello, how is it going?</p>
+        <p className='font-medium text-base sm:text-lg line-clamp-2'>Hello, it&apos;s me. How is it going?</p>
         <p className='font-medium text-base sm:text-lg line-clamp-2'>I am in Auckland, New Zealand.</p>
         <p className='font-medium text-base sm:text-lg line-clamp-2'>
           Right now, it is {localTime}, I might be {activity}.
         </p>
         <p className='font-medium text-base sm:text-lg line-clamp-2'>What a life!</p>
-
-        {/* <p id='info-email' className={`text-base sm:text-lg flex items-center`}>
-          <HiOutlineMail className='mr-2 text-lg text-gray-500' />
-          hi@benxgao.com
-        </p>
-        <p id='info-time' className='text-base sm:text-lg flex items-center'>
-          <IoMdTimer className='mr-2 text-lg text-gray-500' />
-          {localTime}
-        </p>
-        <p id='info-location' className='text-base sm:text-lg flex items-center'>
-          <PiCityLight className='mr-2 text-lg text-gray-500' /> Auckland, New Zealand
-        </p> */}
         <Image
           src='/stay_stay.png'
           alt='stay foolish, stay humble.'
           width={300}
           height={50}
-          className='w-90 h-auto object-cover mt-24'
+          className='w-90 h-auto object-cover mt-8 sm:mt-8 md:mt-24 lg:mt-24'
         />
       </div>
       <div id='info-avatar' className='sm:float-right sm:w-1/2 items-center justify-center'>
