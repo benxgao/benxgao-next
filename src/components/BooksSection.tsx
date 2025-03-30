@@ -274,6 +274,14 @@ const bookList = [
     coverImage:
       "https://books.google.com/books/content?id=XXKNEAAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
   },
+  {
+    title: 'Excellence Wins',
+    subtitle: 'A No-Nonsense Guide to Becoming the Best in a World of Compromise',
+    authors: ['Horst Schulze'],
+    previewLink: '',
+    coverImage:
+      'https://books.google.com/books/content?id=rzdhDwAAQBAJ&printsec=frontcover&img=1&zoom=0&source=gbs_api',
+  }
 ];
 
 export default function BooksSection() {
@@ -289,7 +297,7 @@ export default function BooksSection() {
   useEffect(() => {
     const apiKey = "AIzaSyCedKd1qAf9vnYbajt4ELw-9knWNY8rKnE";
 
-    const bookTitles = ["Get out of your own way"];
+    const bookTitles = ["Excellence Wins"];
 
     [bookTitles[0]].forEach(async (title) => {
       const searchQuery = title;
@@ -329,11 +337,11 @@ export default function BooksSection() {
             dots={true}
             infinite={true}
             speed={500}
-            slidesToShow={4}
-            slidesToScroll={4}
+            slidesToShow={5}
+            slidesToScroll={5}
             arrows={true}
             responsive={[
-              { breakpoint: 1024, settings: { slidesToShow: 3 } },
+              { breakpoint: 1024, settings: { slidesToShow: 5 } },
               {
                 breakpoint: 600,
                 settings: {

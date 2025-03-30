@@ -60,7 +60,7 @@ export default function PageFooter() {
             </li>
             <li>
               <a
-                className='text text-white hover:text-pink-300 underline'
+                className='text-sm text-white hover:text-pink-300 underline'
                 href='https://www.http://wikipedia.org/?benxgao'
               >
                 wikipedia.org
