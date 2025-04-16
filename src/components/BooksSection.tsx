@@ -275,13 +275,22 @@ const bookList = [
       "https://books.google.com/books/content?id=XXKNEAAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
   },
   {
-    title: 'Excellence Wins',
-    subtitle: 'A No-Nonsense Guide to Becoming the Best in a World of Compromise',
-    authors: ['Horst Schulze'],
-    previewLink: '',
+    title: "Excellence Wins",
+    subtitle:
+      "A No-Nonsense Guide to Becoming the Best in a World of Compromise",
+    authors: ["Horst Schulze"],
+    previewLink: "",
     coverImage:
-      'https://books.google.com/books/content?id=rzdhDwAAQBAJ&printsec=frontcover&img=1&zoom=0&source=gbs_api',
-  }
+      "https://books.google.com/books/content?id=rzdhDwAAQBAJ&printsec=frontcover&img=1&zoom=0&source=gbs_api",
+  },
+  {
+    title: "The Innovator's Dilemma",
+    subtitle: "When New Technologies Cause Great Firms to Fail",
+    authors: ["Clayton M. Christensen"],
+    previewLink: "",
+    coverImage:
+      "https://books.google.com/books/content?id=K6FrJTWeUssC&printsec=frontcover&img=1&zoom=0&edge=curl&source=gbs_api",
+  },
 ];
 
 export default function BooksSection() {
@@ -297,7 +306,7 @@ export default function BooksSection() {
   useEffect(() => {
     const apiKey = "AIzaSyCedKd1qAf9vnYbajt4ELw-9knWNY8rKnE";
 
-    const bookTitles = ["Excellence Wins"];
+    const bookTitles = ["The Innovator's Dilemma"];
 
     [bookTitles[0]].forEach(async (title) => {
       const searchQuery = title;
@@ -308,7 +317,9 @@ export default function BooksSection() {
         .then((data) => {
           const { volumeInfo } = data.items[0];
 
-          // console.log(`data.items[0]: ${JSON.stringify(data.items[0], null, 2)}`);
+          console.log(
+            `data.items[0]: ${JSON.stringify(data.items[0], null, 2)}`
+          );
 
           const metaData = {
             title: volumeInfo.title,
@@ -318,7 +329,7 @@ export default function BooksSection() {
             coverImage: volumeInfo.imageLinks.thumbnail,
           };
 
-          console.log(JSON.stringify(metaData, null, 2));
+          // console.log(JSON.stringify(metaData, null, 2));
 
           return metaData;
         })
@@ -329,7 +340,7 @@ export default function BooksSection() {
   return (
     <PageSection
       id="books"
-      title="Recommendation of my completed reading includes Chinese versions (2020-2024)"
+      title="Recommendation of my recent completed reading including Chinese translations"
     >
       <div className="pb-8">
         {isClient ? (
