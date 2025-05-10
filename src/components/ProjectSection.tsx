@@ -58,8 +58,8 @@ export default function ProjectSection() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <h3 className="text-lg sm:text-xl font-medium mb-2 hover:underline hover:text-purple-300">
-              bfirebase-nextjs-apphosting-sample
+            <h3 className="text-lg sm:text-xl font-medium mb-2 hover:underline hover:text-orange-300">
+              firebase-nextjs-apphosting-sample
             </h3>
           </a>
           <p className="text-sm sm:text-base">
@@ -74,13 +74,29 @@ export default function ProjectSection() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <h3 className="text-lg sm:text-xl font-medium mb-2 hover:underline hover:text-purple-300">
+            <h3 className="text-lg sm:text-xl font-medium mb-2 hover:underline hover:text-red-300">
               firebase-api-sample
             </h3>
           </a>
           <p className="text-sm sm:text-base">
             A sample of API server on firebase functions -
             https://github.com/benxgao/firebase-api-sample
+          </p>
+        </div>
+
+        <div key={6} className="pb-8 sm:pb-2 md:pb-8 w-full">
+          <a
+            href="https://github.com/benxgao/gke-k8s-notes"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <h3 className="text-lg sm:text-xl font-medium mb-2 hover:underline hover:text-lime-300">
+              gke-k8s-notes
+            </h3>
+          </a>
+          <p className="text-sm sm:text-base">
+            My learning notes on Kubernetes and GKE -
+            https://github.com/benxgao/gke-k8s-notes
           </p>
         </div>
       </div>
