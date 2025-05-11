@@ -268,7 +268,7 @@ const bookList = [
   },
   {
     title: "Get out of your own way",
-    subtitle: "A Skeptic’s Guide to Growth and Fulfillment",
+    subtitle: "A Skeptic Guide to Growth and Fulfillment",
     authors: ["Dave Hollis"],
     previewLink: "",
     coverImage:
@@ -340,7 +340,7 @@ export default function BooksSection() {
   return (
     <PageSection
       id="books"
-      title="Recommendation of my recent completed reading including Chinese translations"
+      title="Recommendation of my recent completed reading"
     >
       <div className="pb-8">
         {isClient ? (

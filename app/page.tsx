@@ -9,6 +9,7 @@ import ProjectSection from "@/src/components/ProjectSection";
 import ExpSection from "@/src/components/ExpSection";
 import InfoSection from "@/src/components/InfoSection";
 import WorkshopSection from "@/src/components/WorkshopSection";
+import CertSection from "@/src/components/CertSection";
 
 export default function Home() {
   return (
@@ -17,9 +18,8 @@ export default function Home() {
         <PageHeader />
 
         <InfoSection />
-
         <WorkshopSection />
-
+        <CertSection />
         <BooksSection />
 
         <PageSection id="skills" title="My core tech skills">
@@ -27,15 +27,9 @@ export default function Home() {
         </PageSection>
 
         <ExpSection />
-
         <ProjectSection />
 
-        <PageSection
-          id="contact"
-          title="Send me a message if you want to work together (in NZ or AU), got any ideas, or have a chat!"
-        >
-          <ContactForm />
-        </PageSection>
+        <ContactForm />
       </div>
 
       <PageFooter />
