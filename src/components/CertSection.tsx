@@ -16,7 +16,11 @@ export default function CertificationSection() {
               Google Cloud Certified Associate Cloud Engineer (May 2025)
             </h3>
           </a>
-          <p className="text-sm sm:text-base">Series ID: 170193</p>
+          <p className="text-sm sm:text-base">
+            Validated proficiency in deploying applications, monitoring
+            operations, and managing enterprise solutions on Google Cloud
+            Platform.
+          </p>
         </div>
       </div>
     </PageSection>

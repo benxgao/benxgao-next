@@ -57,7 +57,7 @@ const ContactForm = () => {
   return (
     <PageSection
       id="contact"
-      title="Send me a message if you want to work together (in NZ or AU), got any ideas, or have a chat!"
+      title="Feel free to reach out for collaboration opportunities in New Zealand or Australia, discuss project ideas, or for professional inquiries."
     >
       <form
         onSubmit={handleSubmit}

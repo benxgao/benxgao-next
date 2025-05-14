@@ -303,44 +303,44 @@ export default function BooksSection() {
     }
   }, [books]);
 
-  useEffect(() => {
-    const apiKey = "AIzaSyCedKd1qAf9vnYbajt4ELw-9knWNY8rKnE";
+  // useEffect(() => {
+  //   const apiKey = "AIzaSyCedKd1qAf9vnYbajt4ELw-9knWNY8rKnE";
 
-    const bookTitles = ["The Innovator's Dilemma"];
+  //   const bookTitles = ["The Innovator's Dilemma"];
 
-    [bookTitles[0]].forEach(async (title) => {
-      const searchQuery = title;
-      const apiUrl = `https://www.googleapis.com/books/v1/volumes?q=${searchQuery}&key=${apiKey}&maxResults=1`;
+  //   [bookTitles[0]].forEach(async (title) => {
+  //     const searchQuery = title;
+  //     const apiUrl = `https://www.googleapis.com/books/v1/volumes?q=${searchQuery}&key=${apiKey}&maxResults=1`;
 
-      await fetch(apiUrl)
-        .then((x) => x.json())
-        .then((data) => {
-          const { volumeInfo } = data.items[0];
+  //     await fetch(apiUrl)
+  //       .then((x) => x.json())
+  //       .then((data) => {
+  //         const { volumeInfo } = data.items[0];
 
-          console.log(
-            `data.items[0]: ${JSON.stringify(data.items[0], null, 2)}`
-          );
+  //         console.log(
+  //           `data.items[0]: ${JSON.stringify(data.items[0], null, 2)}`
+  //         );
 
-          const metaData = {
-            title: volumeInfo.title,
-            subtitle: volumeInfo.subtitle,
-            authors: volumeInfo.authors,
-            previewLink: volumeInfo.previewLink,
-            coverImage: volumeInfo.imageLinks.thumbnail,
-          };
+  //         const metaData = {
+  //           title: volumeInfo.title,
+  //           subtitle: volumeInfo.subtitle,
+  //           authors: volumeInfo.authors,
+  //           previewLink: volumeInfo.previewLink,
+  //           coverImage: volumeInfo.imageLinks.thumbnail,
+  //         };
 
-          // console.log(JSON.stringify(metaData, null, 2));
+  //         // console.log(JSON.stringify(metaData, null, 2));
 
-          return metaData;
-        })
-        .catch((error) => console.error("Error fetching data:", error));
-    });
-  }, []);
+  //         return metaData;
+  //       })
+  //       .catch((error) => console.error("Error fetching data:", error));
+  //   });
+  // }, []);
 
   return (
     <PageSection
       id="books"
-      title="Recommendation of my recent completed reading"
+      title="Recommendation of my recent completed reading (2020 - 2024)"
     >
       <div className="pb-8">
         {isClient ? (

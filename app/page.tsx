@@ -10,6 +10,7 @@ import ExpSection from "@/src/components/ExpSection";
 import InfoSection from "@/src/components/InfoSection";
 import WorkshopSection from "@/src/components/WorkshopSection";
 import CertSection from "@/src/components/CertSection";
+import EducationSection from "@/src/components/EducationSection";
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
         <PageHeader />
 
         <InfoSection />
+        <EducationSection />
         <WorkshopSection />
         <CertSection />
         <BooksSection />
