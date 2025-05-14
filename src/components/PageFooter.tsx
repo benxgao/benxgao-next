@@ -1,6 +1,5 @@
-import { FaGithub, FaMedium } from 'react-icons/fa';
-import { FaXTwitter } from 'react-icons/fa6';
-import { sourceCodePro400 } from '../../styles/fonts';
+import { FaGithub, FaMedium, FaLinkedin } from "react-icons/fa";
+import { sourceCodePro400 } from "../../styles/fonts";
 
 export default function PageFooter() {
   return (
@@ -106,12 +105,12 @@ export default function PageFooter() {
             <FaGithub size={24} />
           </a>
           <a
-            href="https://x.com/benxgao"
+            href="https://linkedin.com/in/benxgao"
             target="_blank"
             rel="noopener noreferrer"
             className="text-white hover:text-amber-300 underline"
           >
-            <FaXTwitter size={24} />
+            <FaLinkedin size={24} />
           </a>
         </div>
       </div>

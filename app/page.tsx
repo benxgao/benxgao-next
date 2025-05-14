@@ -21,8 +21,8 @@ export default function Home() {
         <InfoSection />
         <EducationSection />
         <WorkshopSection />
-        <CertSection />
         <BooksSection />
+        <CertSection />
 
         <PageSection id="skills" title="My core tech skills">
           <SimpleCloud />

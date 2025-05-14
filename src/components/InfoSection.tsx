@@ -66,14 +66,14 @@ const InfoSection = ({}) => {
       /> */}
       <div id="info-brief" className="sm:float-left sm:w-1/2 bg-opacity-50">
         <p className="font-medium text-base sm:text-lg">
-          Hello, I am Ben Gao, a full-stack developer based in Auckland, New
-          Zealand.
+          Hello, I am Ben Gao, a full-stack JavaScript developer based in
+          Auckland, New Zealand.
         </p>
         <br />
         <p className="text-base sm:text-lg">
           I specialize in delivering scalable, maintainable, and intuitive
           digital solutions, with experience across React, TypeScript, Node.js,
-          GCP, and blockchain technologies.
+          and cloud infrastructure.
         </p>
         <br />
         <p className="text-base sm:text-lg">

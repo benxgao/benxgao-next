@@ -13,7 +13,8 @@ export default function CertificationSection() {
             rel="noopener noreferrer"
           >
             <h3 className="text-lg sm:text-xl font-medium mb-2 hover:underline hover:text-amber-300">
-              Google Cloud Certified Associate Cloud Engineer (May 2025)
+              Google Cloud Certified Associate Cloud Engineer (May 2025 - Jun
+              2028)
             </h3>
           </a>
           <p className="text-sm sm:text-base">
