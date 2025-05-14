@@ -5,32 +5,44 @@ export default function ExpSection() {
     <PageSection id="experience" title="My experience">
       <ul className="list-disc">
         <li className="block mb-4 text-base sm:text-lg">
-          <b>Cloud & Backend Development</b>: Proficient in Google Cloud
-          Platform (GCP), Node.js, Express.js, Docker, and serverless
-          architectures such as AWS Lambda and Firebase. Experienced in setting
-          up CI/CD pipelines using CircleCI and GitHub Actions.
+          <b>Full-Stack JavaScript Development:</b> Proficient in developing web
+          applications using Node.js and React.js, with experience in both
+          front-end and back-end development.
         </li>
         <li className="block mb-4 text-base sm:text-lg">
-          <b>Frontend Development</b>: Extensive experience with React.js,
-          TypeScript, and modern CSS methodologies, including Styled-components
-          and Tailwind CSS, ensuring pixel-perfect UI/UX implementations.
+          <b>Cloud Technologies (GCP):</b> Experienced in managing Google Cloud
+          Platform resources, including building data integration systems on
+          Message Queues, setting up VPC networking, and utilizing serverless
+          functions and Firebase Suites.
         </li>
         <li className="block mb-4 text-base sm:text-lg">
-          <b>UI/UX Design</b>: Skilled in translating designs from Figma and
-          Sketch into responsive web applications. Familiar with UI frameworks
-          like Bootstrap, Material Design, and Ant Design.
+          <b>Data Integration & API Development:</b> Proven ability to develop
+          and maintain robust data integrations for e-commerce platforms and
+          design and implement RESTful APIs.
         </li>
         <li className="block mb-4 text-base sm:text-lg">
-          <b>Testing & Quality Assurance</b>: Experienced in setting up testing
-          frameworks such as Jest, writing unit and end-to-end tests, and
-          implementing snapshot testing for React.js components, including
-          blockchain-related testing.
+          <b>CI/CD Pipelines & Automation Testing:</b> Skilled in designing,
+          implementing, and maintaining CI/CD pipelines for automated deployment
+          and implementing comprehensive automated test coverage (unit,
+          integration, and end-to-end).
         </li>
         <li className="block mb-4 text-base sm:text-lg">
-          <b>Agile Methodologies & Web Management</b>: Practical experience with
-          Agile methodologies (Scrum), website management (DNS, Cloudflare), and
-          business website development, including SEO and Google Analytics
-          integration.
+          <b>Front-End Development:</b> Expertise in front-end technologies
+          including HTML5, SCSS, Styled-components, and experience with
+          component libraries (React) and UI/UX enhancement.
+        </li>
+        <li className="block mb-4 text-base sm:text-lg">
+          <b>Back-End Development:</b> Strong back-end skills utilizing Node.js,
+          TypeScript, and experience with databases like MongoDB.
+        </li>
+        <li className="block mb-4 text-base sm:text-lg">
+          <b>Security & Authentication:</b> Experience in enhancing API
+          authentication security (OAuth/JWT) and implementing best practices
+          for user privacy data protection.
+        </li>
+        <li className="block mb-4 text-base sm:text-lg">
+          <b>Agile/SCRUM:</b> Experienced working within Agile/SCRUM teams and
+          methodologies.
         </li>
       </ul>
     </PageSection>
