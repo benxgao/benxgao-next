@@ -15,25 +15,22 @@ import EducationSection from "@/src/components/EducationSection";
 export default function Home() {
   return (
     <>
-      <div className="relative min-h-screen bg-transparent text-black font-['Playfair_Display'] p-0 sm:p-0 md:px-8 lg:px-12 space-y-0">
-        <PageHeader />
-
-        <InfoSection />
+      <PageHeader />
+      <main className="relative min-h-screen bg-transparent text-black font-['Playfair_Display'] p-0 sm:p-0 md:px-8 lg:px-12 space-y-0">
+        <article itemScope itemType="https://schema.org/Person">
+          <InfoSection />
+        </article>
         <EducationSection />
         <WorkshopSection />
         <BooksSection />
         <CertSection />
-
         <PageSection id="skills" title="My core tech skills">
           <SimpleCloud />
         </PageSection>
-
         <ExpSection />
         <ProjectSection />
-
         <ContactForm />
-      </div>
-
+      </main>
       <PageFooter />
       <BgGraphics />
     </>
