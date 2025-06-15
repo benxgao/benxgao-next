@@ -1,16 +1,16 @@
 import PageHeader from "@/src/components/PageHeader";
 import PageFooter from "@/src/components/PageFooter";
 import SimpleCloud from "@/src/components/SkillsTagCloud";
-import ContactForm from "@/src/components/ContactForm";
-import BgGraphics from "@/src/components/BgGraphics";
+// import ContactForm from "@/src/components/ContactForm";
+// import BgGraphics from "@/src/components/BgGraphics";
 import PageSection from "@/src/components/PageSection";
-import BooksSection from "@/src/components/BooksSection";
+// import BooksSection from "@/src/components/BooksSection";
 import ProjectSection from "@/src/components/ProjectSection";
 import ExpSection from "@/src/components/ExpSection";
 import InfoSection from "@/src/components/InfoSection";
-import WorkshopSection from "@/src/components/WorkshopSection";
-import CertSection from "@/src/components/CertSection";
-import EducationSection from "@/src/components/EducationSection";
+// import WorkshopSection from "@/src/components/WorkshopSection";
+// import CertSection from "@/src/components/CertSection";
+// import EducationSection from "@/src/components/EducationSection";
 
 export default function Home() {
   return (
@@ -20,19 +20,19 @@ export default function Home() {
         <article itemScope itemType="https://schema.org/Person">
           <InfoSection />
         </article>
-        <EducationSection />
-        <WorkshopSection />
-        <BooksSection />
-        <CertSection />
+        {/* <EducationSection /> */}
+        {/* <WorkshopSection /> */}
+        {/* <BooksSection /> */}
+        {/* <CertSection /> */}
         <PageSection id="skills" title="My core tech skills">
           <SimpleCloud />
         </PageSection>
         <ExpSection />
         <ProjectSection />
-        <ContactForm />
+        {/* <ContactForm /> */}
       </main>
       <PageFooter />
-      <BgGraphics />
+      {/* <BgGraphics /> */}
     </>
   );
 }
